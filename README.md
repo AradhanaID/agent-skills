@@ -9,6 +9,7 @@ Frontend skills for AI coding agents, maintained against [Matt Pocock](https://g
 | [`plan`](skills/plan/SKILL.md) | user (`/plan`) | Plan frontend work before code: outcome, vertical slices, seams, acceptance checks |
 | [`remove-dead-code`](skills/remove-dead-code/SKILL.md) | user (`/remove-dead-code`) | Prove frontend code unused, delete whole units in slices, verify per slice |
 | [`structure`](skills/structure/SKILL.md) | **model** (auto) | File placement and naming — fires when creating or moving frontend files |
+| [`design-system`](skills/design-system/SKILL.md) | **model** (auto) | Enforces UI preferences while styling: one font, spacing over borders, 80-20-10 color |
 | [`write-a-skill`](skills/write-a-skill/SKILL.md) | user (`/write-a-skill`) | Author or rework a skill: trigger, steps, leading words, the no-op test |
 
 ## Why the invocation split
