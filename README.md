@@ -7,6 +7,7 @@ Frontend skills for AI coding agents, maintained against [Matt Pocock](https://g
 | Skill | Invoked | For |
 |---|---|---|
 | [`plan`](skills/plan/SKILL.md) | user (`/plan`) | Plan frontend work before code: outcome, vertical slices, seams, acceptance checks |
+| [`ship`](skills/ship/SKILL.md) | user (`/ship`) | Commit finished work on a branch and open a PR against dev: verify, why-first message, honest gaps |
 | [`remove-dead-code`](skills/remove-dead-code/SKILL.md) | user (`/remove-dead-code`) | Prove frontend code unused, delete whole units in slices, verify per slice |
 | [`structure`](skills/structure/SKILL.md) | **model** (auto) | File placement and naming — fires when creating or moving frontend files |
 | [`comments`](skills/comments/SKILL.md) | **model** (auto) | Comment rules — keep a why the code cannot show, delete what the line beneath already says |
@@ -15,7 +16,7 @@ Frontend skills for AI coding agents, maintained against [Matt Pocock](https://g
 
 ## Why the invocation split
 
-- `plan` and `remove-dead-code` are user-invoked (`disable-model-invocation: true`): zero always-on context load, the description is a human-facing one-liner (<100 chars). `/plan` in particular is run on purpose, before work starts — never as a side effect.
+- `plan`, `ship` and `remove-dead-code` are user-invoked (`disable-model-invocation: true`): zero always-on context load, the description is a human-facing one-liner (<100 chars). `/plan` in particular is run on purpose, before work starts — never as a side effect. `ship` pushes to a remote and opens a PR, which is never a side effect worth risking.
 - `structure` is model-invoked: its description is the always-loaded context pointer that lets the agent fire it autonomously at the moment a file is created or moved, exactly when placement knowledge pays.
 - `comments` is model-invoked for the same reason: the mistake it prevents — writing a comment that narrates the line beneath — happens while code is being typed, not when someone asks for a comment review.
 
